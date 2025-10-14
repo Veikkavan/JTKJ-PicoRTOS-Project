@@ -29,6 +29,7 @@ enum state programState = WAITING;
 uint32_t ambientLight;
 
 static void btn_fxn(uint gpio, uint32_t eventMask) {
+    toggle_led ();
     // Tehtävä 1: Vaihda LEDin tila.
     //            Tarkista SDK, ja jos et löydä vastaavaa funktiota, sinun täytyy toteuttaa se itse.
     // Exercise 1: Toggle the LED. 
@@ -160,6 +161,13 @@ int main() {
     // Tehtävä 1:  Alusta painike ja LEd ja rekisteröi vastaava keskeytys.
     //             Keskeytyskäsittelijä on määritelty yläpuolella nimellä btn_fxn
 
+
+
+    init_button1 ();
+
+    init_red_led ();
+
+    gpio_set_irq_enabled_with_callback(BUTTON1, GPIO_IRQ_EDGE_RISE, true, btn_fxn);
 
 
     
