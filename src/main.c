@@ -25,7 +25,7 @@
 #define REG_VIESTI      0x75 
 #define REG_PWR_MGMT0   0x1F
 
-// (Tällä hetkellä tilakonetta ei oikeasti käytetä, mutta jätetty paikalleen)
+// Tilakone
 enum state {
     STATE_INIT = 0,
     STATE_READ_INPUT,
